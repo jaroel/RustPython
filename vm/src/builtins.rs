@@ -714,7 +714,7 @@ fn builtin_sum(vm: &mut VirtualMachine, args: PyFuncArgs) -> PyResult {
 // builtin_vars
 // builtin___import__
 
-pub fn make_module(ctx: &PyContext) -> PyObjectRef {
+pub fn mk_module(ctx: &PyContext) -> PyObjectRef {
     let py_mod = py_module!(ctx, "__builtins__", {
         //set __name__ fixes: https://github.com/RustPython/RustPython/issues/146
         "__name__" => ctx.new_str(String::from("__main__")),
